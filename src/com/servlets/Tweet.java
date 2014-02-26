@@ -45,12 +45,14 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
     	TweetModel tm= new TweetModel();
     	tm.setCluster(cluster);
     	tm.addTweet(newtweet, username);
+    	
+    	response.sendRedirect("/Tweet/" + username);
+    	
+    	//RequestDispatcher rd;	
+    	//request.setAttribute("Username", username);
+		//rd = request.getRequestDispatcher("/TweetAdded.jsp");
 
-    	RequestDispatcher rd;	
-    	request.setAttribute("Username", username);
-		rd = request.getRequestDispatcher("/TweetAdded.jsp");
-
-		rd.include(request, response);
+		//rd.include(request, response);
 }
     
 /**
